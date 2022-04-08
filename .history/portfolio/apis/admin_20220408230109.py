@@ -1,4 +1,3 @@
-from dataclasses import field
 from django.contrib import admin
 from django_better_admin_arrayfield.admin.mixins import DynamicArrayMixin
 
@@ -10,4 +9,3 @@ from .models.design import Design
 admin.site.register(Project)
 admin.site.register(User)
 admin.site.register(Design)
-

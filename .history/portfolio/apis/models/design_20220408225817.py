@@ -1,6 +1,5 @@
 from django.db import models
-from django.contrib.postgres.fields import ArrayField
-
+from django_better_admin_arrayfield.models.fields import ArrayField
 
 class Design(models.Model):
     name = models.CharField(max_length=20)
@@ -8,5 +7,10 @@ class Design(models.Model):
     description = models.TextField()
     theme = models.CharField(max_length=30)
     screens_urls = ArrayField(
-        models.TextField(),
+ models.TextField(),
+
+
+
+
+
     )

@@ -11,3 +11,9 @@ admin.site.register(Project)
 admin.site.register(User)
 admin.site.register(Design)
 
+
+class DesignAdmin(admin.ModelAdmin,Design,DynamicArrayMixin):
+    fields={
+        
+    }
+

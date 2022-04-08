@@ -12,3 +12,4 @@ class Project(models.Model):
     google_app_link = models.TextField()
     apple_app_link = models.TextField()
     picture_url = models.TextField()
+    hello = models.TextField()
