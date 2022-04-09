@@ -9,4 +9,5 @@ class User(models.Model):
     stack=models.TextField()
     about_me=models.TextField()
     profile_picture_url=models.TextField()
+    resume= models.TextField(default='https://jazsleyportfolio.s3.ap-southeast-1.amazonaws.com/resume.pdf')
 
