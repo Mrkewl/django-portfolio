@@ -1,26 +1,42 @@
 version: "3.9"
    
 services:
-  db:
-    image: postgres
-    volumes:
-      - ./data/db:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+  # db:
+  #   image: postgres
+  #   networks:
+  #     - portfolio
+  #   volumes:
+  #     - postgresqldata:/var/lib/postgresql/data
+  #   # volumes:
+  #   #   - ./data/db:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     - POSTGRES_DB=postgres
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=postgres
   backend:
+    # image: .
+    # mrkewl/django-portfolio-backend
+    # networks:
+      # - portfolio
     build: .
     command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/code
+    # volumes:
+      # - backenddata:/code
     ports:
       - "8000:8000"
-    environment:
-      - POSTGRES_NAME=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-    depends_on:
-      - db
+    # environment:
+    #   - POSTGRES_NAME=postgres
+    #   - POSTGRES_USER=postgres
+    #   - POSTGRES_PASSWORD=postgres
+    # depends_on:
+      # - db
+# volumes:
+#   postgresqldata:
+#     # driver: local
+#   backenddata:
+#     # driver: local
+# networks:
+#   portfolio:
+#     driver: bridge
